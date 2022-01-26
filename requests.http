@@ -1,0 +1,37 @@
+@jwt1 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMzMjMyMDN9.HQ3SCSR9sg8q1TC8O-1WjtL91mGwfJvw0f75_Z-LRCM
+
+@jwt2 = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDMzMjMyMjB9._8DDLzLMz0EOp8Qkkz5UvPv757H2tXqJ0Axxna90gqA
+
+@jwt3 = aasdasd
+
+###Users Index
+
+GET http://localhost:3000/users
+Authorization: Bearer {{jwt1}}
+
+### Users create
+
+POST http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer {{jwt1}}
+
+{
+  "name": "Mester Fester",
+  "email": "tester.fester@gmail.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Users Show
+
+GET http://localhost:3000/users/3
+Authorization: Bearer {{jwt1}}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "bester.tester@gmail.com",
+  "password": "password"
+}
